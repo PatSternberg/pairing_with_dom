@@ -54,10 +54,15 @@ new_music_tracker = MusicTracker()
 isinstance(new_music_tracker.tracklist, list)
 
 """
-
+Given a track name, album and artist
+#add adds the track to self.tracklist
+And #get_tracklist returns the tracklist
 """
-reminder = Reminder("Kay")
-reminder.remind() # raises an error with the message "No task set."
+new_music_tracker = MusicTracker()
+new_music_tracker.add({'track_name': 'The Bay', 'artist': 'Metronomy', 'album': 'Selftitled' })
+result = new_music_tracker.get_tracklist()
+
+assert result == [{'track_name': 'The Bay', 'artist': 'Metronomy', 'album': 'Selftitled' }]
 
 """
 Given a name and an empty task
